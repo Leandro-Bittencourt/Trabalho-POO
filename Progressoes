@@ -1,0 +1,29 @@
+public class Progressoes {
+    public static int[] progressaoAritmetica(int primeiroTermo, int razao, int tamanho) {
+        int[] resultado = new int[tamanho];
+        resultado[0] = primeiroTermo;
+        for (int i = 1; i < tamanho; i++) {
+            resultado[i] = resultado[i - 1] + razao;
+        }
+        return resultado;
+    }
+
+    public static int[] progressaoGeometrica(int primeiroTermo, int razao, int tamanho) {
+        int[] resultado = new int[tamanho];
+        resultado[0] = primeiroTermo;
+        for (int i = 1; i < tamanho; i++) {
+            resultado[i] = resultado[i - 1] * razao;
+        }
+        return resultado;
+    }
+
+    public static int[] fibonacci(int tamanho) {
+        int[] resultado = new int[tamanho];
+        resultado[0] = 0;
+        resultado[1] = 1;
+        for (int i = 2; i < tamanho; i++) {
+            resultado[i] = resultado[i - 1] + resultado[i - 2];
+        }
+        return resultado;
+    }
+}
