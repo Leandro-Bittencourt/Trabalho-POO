@@ -1,0 +1,24 @@
+public class Retangulos {
+    public static void desenharRetanguloSimples(int largura, int altura) {
+        for (int i = 0; i < altura; i++) {
+            for (int j = 0; j < largura; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void desenharRetanguloColorido(int largura, int altura, String cor) {
+        System.out.print("\033[0;" + cor + "m"); // código ANSI para cor
+        desenharRetanguloSimples(largura, altura);
+        System.out.print("\033[0m"); // resetar cor
+    }
+
+    public static void desenharRetanguloArredondado(int largura, int altura) {
+        System.out.println("╭" + "─".repeat(largura - 2) + "╮");
+        for (int i = 0; i < altura - 2; i++) {
+            System.out.println("│" + " ".repeat(largura - 2) + "│");
+        }
+        System.out.println("╰" + "─".repeat(largura - 2) + "╯");
+    }
+}
